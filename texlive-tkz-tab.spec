@@ -1,0 +1,77 @@
+# revision 22834
+# category Package
+# catalog-ctan /macros/latex/contrib/tkz/tkz-tab
+# catalog-date 2011-06-05 23:10:23 +0200
+# catalog-license lppl
+# catalog-version 1.3c
+Name:		texlive-tkz-tab
+Version:	1.3c
+Release:	1
+Summary:	Tables of signs and variations using PGF/TikZ
+Group:		Publishing
+URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tkz/tkz-tab
+License:	LPPL
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tkz-tab.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tkz-tab.doc.tar.xz
+BuildArch:	noarch
+BuildRequires:	texlive-tlpkg
+Requires(post):	texlive-tlpkg
+Conflicts:	texlive-texmf <= 20110705-3
+Conflicts:	texlive-doc <= 20110705-3
+
+%description
+The package provides comprehensive facilities for preparing
+lists of signs and variations, using PGF. The package
+documentation requires the tkz-doc bundle.
+
+%pre
+    %_texmf_mktexlsr_pre
+
+%post
+    %_texmf_mktexlsr_post
+
+%preun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_pre
+    fi
+
+%postun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_post
+    fi
+
+#-----------------------------------------------------------------------
+%files
+%{_texmfdistdir}/tex/latex/tkz-tab/tkz-tab.sty
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/README
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZ-doc-tab-faq.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-adapt.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-bac.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-examples.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-image.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-init.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-install.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-main.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-sign.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-slope.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-style.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-tangente.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-tv.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-valeurs.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab-variation.tex
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/latex/TKZdoc-tab.ist
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/readme-us.txt
+%doc %{_texmfdistdir}/doc/latex/tkz-tab/tkz-tab-screen.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
+
+#-----------------------------------------------------------------------
+%prep
+%setup -c -a0 -a1
+
+%build
+
+%install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
