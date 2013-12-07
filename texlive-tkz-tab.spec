@@ -6,7 +6,7 @@
 # catalog-version 1.3c
 Name:		texlive-tkz-tab
 Version:	1.3c
-Release:	3
+Release:	4
 Summary:	Tables of signs and variations using PGF/TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tkz/tkz-tab
