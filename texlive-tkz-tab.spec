@@ -1,5 +1,5 @@
 Name:		texlive-tkz-tab
-Version:	54940
+Version:	66119
 Release:	1
 Summary:	Tables of signs and variations using PGF/TikZ
 Group:		Publishing
