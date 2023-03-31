@@ -1,6 +1,6 @@
 Name:		texlive-tkz-tab
 Version:	66119
-Release:	1
+Release:	2
 Summary:	Tables of signs and variations using PGF/TikZ
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tkz/tkz-tab
