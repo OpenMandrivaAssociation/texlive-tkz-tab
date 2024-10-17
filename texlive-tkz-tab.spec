@@ -3,7 +3,7 @@ Version:	66119
 Release:	2
 Summary:	Tables of signs and variations using PGF/TikZ
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/tkz/tkz-tab
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/tkz/tkz-tab
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tkz-tab.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/tkz-tab.doc.r%{version}.tar.xz
